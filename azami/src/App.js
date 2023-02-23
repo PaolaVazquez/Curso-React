@@ -10,7 +10,9 @@ function App() {
   return (
     <div>
       <Navbar/>
-      
+      <ProductCard title="Producto 1" price={200} isRed={false}/>
+      <ProductCard title="Producto 2" price={500} isRed={true}/>
+      <ProductCard title="Producto 3"isRed={true}/>
       <ItemListContainer greeting={"hola"}/>
 
       <Footer/>
