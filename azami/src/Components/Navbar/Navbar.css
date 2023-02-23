@@ -1,0 +1,31 @@
+.container-navbar{
+    width: 100%;
+}
+.logo-header{
+    width: 200px;
+}
+
+.container {
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    max-width: 100%;
+    line-height: 80px;
+    z-index: 100;
+}
+.links .link {
+    display: inline-block;
+}
+.links .link  {
+    text-decoration: none;
+    color: #000000;
+    font-size: 20px;
+    margin: 0 25px;
+    letter-spacing: 3px;
+    transition: .3s;
+    cursor: pointer;
+}
+
+.links .link a:hover {
+    color: #937EBF;
+}
