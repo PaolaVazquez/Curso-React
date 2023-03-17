@@ -1,5 +1,4 @@
 import { width } from '@mui/system'
-import React from 'react'
 import { useParams } from 'react-router-dom'
 import { products } from '../../productMok'
 import { ItemCount } from '../ItemCount/ItemCount'

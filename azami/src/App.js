@@ -20,8 +20,7 @@ function App() {
   }
   return (
       <BrowserRouter>
-      <CartContextProvider>
-        <Navbar/>
+      <Navbar/>
         <Routes>
           <Route path="/" element={ <ItemListContainer /> }/>
           <Route path="/category/:id" element={ <ItemListContainer /> }/>
@@ -36,8 +35,6 @@ function App() {
           
         </Routes>
         <Footer/>
-      </CartContextProvider>
-          
         
 
         
