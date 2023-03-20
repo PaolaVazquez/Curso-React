@@ -12,7 +12,7 @@ import "./Footer.css"
 export const Footer = () => {
   return (
     <Box sx={{ flexGrow: 1 }} className="footer">
-      <Grid container spacing={3} className="bg-footer">
+      {/* <Grid container spacing={3} className="bg-footer">
         <Grid item xs={4}>
           <div className='footer-azami'>
             <Link to="/">
@@ -46,7 +46,7 @@ export const Footer = () => {
           </div>
         </Grid>
         
-      </Grid>
+      </Grid> */}
     </Box>
   )
 }

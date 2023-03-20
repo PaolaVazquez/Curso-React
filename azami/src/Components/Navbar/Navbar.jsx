@@ -38,8 +38,8 @@ export const Navbar = ()=>{ // se pueden tantos como se tengan
                     <Link className="link dropmenu" >
                         PRODUCTOS <KeyboardArrowDownIcon/>
                         <div className="dropConten">
-                            <Link className="subcategory" to={"/category/3"}>JOYERIA</Link>
-                            <Link className="subcategory" to={"/category/1"} >CALENDARIOS</Link>
+                            <Link className="subcategory" to={"/category/Joyeria"}>JOYERIA</Link>
+                            <Link className="subcategory" to={"/category/Calendarios"} >CALENDARIOS</Link>
                             
                         </div>
                     </Link>

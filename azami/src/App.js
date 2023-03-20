@@ -20,10 +20,11 @@ function App() {
   }
   return (
       <BrowserRouter>
-      <Navbar/>
+      <CartContextProvider>
+        <Navbar/>
         <Routes>
           <Route path="/" element={ <ItemListContainer /> }/>
-          <Route path="/category/:id" element={ <ItemListContainer /> }/>
+          <Route path="/category/:categoryName" element={ <ItemListContainer /> }/>
           <Route path="/cart" element={ <Cart/>  }/>
           <Route path="/login" element={ <Login/> }/>
           <Route path="*" element={<h1>Error 404: Not Found</h1>} />
@@ -35,9 +36,7 @@ function App() {
           
         </Routes>
         <Footer/>
-        
-
-        
+      </CartContextProvider>
       </BrowserRouter>
 
   );
