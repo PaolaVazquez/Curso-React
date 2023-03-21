@@ -24,11 +24,30 @@ export const CartContextProvider = ({children}) => {
       setCart( [...cart, producto] )
     }
   }
-
+  // FUNCION PARA SABER SI UN PRODUCTO YA ESTA EN EL CARRITO
   const isInCart = ( id )=>{
     return cart.some( (elemento) => elemento.id === id)
   }
+  // FUNCION PARA LIMPIAR EL ACARRITO
+  const clearCart = () => {
+    setCart([]);
+  };
 
+
+  // OBTENER EL TOTAL DE LAS CANTIDADES DE LOS ELEMENTOS DEL CARRITO
+
+  const getTotalQuantity = () => {
+
+    return cart.reduce( (acc, elemento)=>{
+      return acc + elemento.quantity
+    } , 0 )
+
+    // let total = 0;
+    // for (let i = 0; i < cart.length; i++) {
+    //   total += cart[i];
+    // }
+    // return total;
+  };
   //ELIMINAR
   const deleteProductById = (id)=>{
     const newCart = cart.filter((element) => element.id !== id)
@@ -51,7 +70,10 @@ export const CartContextProvider = ({children}) => {
     cart: cart,
     agregarCarrito: agregarCarrito,
     deleteProductById: deleteProductById,
-    getQuantityById: getQuantityById
+    getQuantityById: getQuantityById,
+    clearCart: clearCart,
+    getTotalQuantity: getTotalQuantity,
+    getTotalPrice: getTotalPrice,
   }
 
   return (

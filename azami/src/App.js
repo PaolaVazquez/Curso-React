@@ -30,6 +30,7 @@ function App() {
           <Route path="*" element={<h1>Error 404: Not Found</h1>} />
           <Route path="/itemDetail/:id" element={<ItemDetail/>}/>
           <Route path="/formulario" element={<Formulario/>}/>
+          <Route path="/login" element={<Login/>}/>
           {/*<ProductCard title="Producto 1" price={200} isRed={false}/>*/}
           
           {/*<ItemCount stock={5} initial={1} onAdd={onAdd}/>*/}

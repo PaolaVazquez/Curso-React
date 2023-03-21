@@ -7,48 +7,81 @@
 
 import { CardWidget } from "../CardWidget/CardWidget";
 import "./Navbar.css"
+import "./menu.js"
 import { Link } from "react-router-dom"
 import FavoriteIcon from '@mui/icons-material/Favorite';
-import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
+import * as React from 'react';
+import CssBaseline from '@mui/material/CssBaseline';
+import Box from '@mui/material/Box';
+import Container from '@mui/material/Container';
+import Grid from '@mui/material/Grid';
+
 export const Navbar = ()=>{ // se pueden tantos como se tengan
-    let numero = 12;
     return (
         
     <div className="container-navbar">
         <div className="prom-franja">
-            <div className="">
-                <h2>
-                    <FavoriteIcon/>
-                    HAZ TU PEDIDO 
-                    <FavoriteIcon/>
-                </h2>
-            </div>
-            <div className="">
-                <h2>Mayor a $700MXN y llevate <b>GRATIS</b> un llavero</h2>
-            </div>
+            <React.Fragment>
+                <CssBaseline />
+                <Container maxWidth="lg">
+                    <Box >
+                        <Grid container spacing={2} sx={{ flexGrow: 1 }}>
+                            <Grid xs={12} md={4}>
+                            <div className="">
+                                <h2>
+                                    <FavoriteIcon/>
+                                    HAZ TU PEDIDO 
+                                    <FavoriteIcon/>
+                                </h2>
+                            </div>
+                            </Grid>
+                            <Grid xs={12} md={8}>
+                                <div className="">
+                                    <h2>Mayor a $700MXN y llevate <b>GRATIS</b> un llavero</h2>
+                                </div>
+                            </Grid>
+                        </Grid>
+                    </Box>
 
+                </Container>
+            </React.Fragment>
         </div>
-        <nav className="nav">
-            <div className="container">
+        <header>
+            <div className="logo">
                 <Link to="/">
                     <img src="https://res.cloudinary.com/djstui4rm/image/upload/v1677172222/Azami/logo-azami-bco_r1gio5.png" alt="Logo Azami" className="logo-header"/>
                 </Link>
-                <ul className="links ">
-                    <Link className="link" to={"/"}>INICIO</Link>
-                    <Link className="link dropmenu" >
-                        PRODUCTOS <KeyboardArrowDownIcon/>
-                        <div className="dropConten">
-                            <Link className="subcategory" to={"/category/Joyeria"}>JOYERIA</Link>
-                            <Link className="subcategory" to={"/category/Calendarios"} >CALENDARIOS</Link>
-                            
-                        </div>
-                    </Link>
-                    <Link className="link" >NOVEDADES</Link>
-                    <Link className="link">CÓMO COMPRAR</Link>
-                    <Link className="link"> <CardWidget numero={numero}/></Link>
-                </ul>
             </div>
-        </nav>
+            <nav className="responsive-menu">
+                <a  className="toggle-menu" data-toggle-class="active" data-toggle-target=".main-menu, this"><svg height="32" viewBox="0 0 32 32" width="32" xmlns="http://www.w3.org/2000/svg"><path d="M4 10h24c1.104 0 2-.896 2-2s-.896-2-2-2H4c-1.104 0-2 .896-2 2s.896 2 2 2zm24 4H4c-1.104 0-2 .896-2 2s.896 2 2 2h24c1.104 0 2-.896 2-2s-.896-2-2-2zm0 8H4c-1.104 0-2 .896-2 2s.896 2 2 2h24c1.104 0 2-.896 2-2s-.896-2-2-2z" fill="#937EBF"/></svg><span>Menu</span></a>
+                
+                <ul className="main-menu">
+                    <li>
+                        <Link to={"/"}><span>INICIO</span></Link>
+                    </li>
+                    <li>
+                        <Link href="#"><span>PRODUCTOS </span></Link> 
+                        <ul className="sub-menu">
+                            <li><Link to={"/category/Joyeria"}><span>JOYERIA</span></Link></li>
+                            <li><Link to={"/category/Calendarios"} ><span>CALENDARIOS</span></Link></li>
+                            <li><Link href="#"><span>Item 1.3</span></Link></li>
+                        </ul>
+                    </li>
+                    
+                    <li>
+                        <Link href="#"><span>NOVEDADES</span></Link>
+                    </li>
+                    <li>
+                        <Link href="#"><span>CÓMO COMPRAR</span></Link>
+                    </li>
+                    <li>
+                        <Link href="#"><span> <CardWidget /></span></Link>
+                    </li>
+                </ul>
+            </nav>
+        
+        </header>
+        
         
     </div>
     );

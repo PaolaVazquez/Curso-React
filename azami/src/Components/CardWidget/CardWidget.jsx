@@ -3,6 +3,7 @@ import {BsBookmarkHeart } from "react-icons/bs"
 import { Link } from "react-router-dom"
 import "./CartWidget.css"
 import {useContext} from "react"
+import Face2Icon from '@mui/icons-material/Face2';
 import { CartContext } from "../../context/CartContext"
 
 export const CardWidget = ({numero}) => {
@@ -18,6 +19,10 @@ export const CardWidget = ({numero}) => {
         </div>
         
       </Link>
+      <Link to={"/login"}>
+        <Face2Icon size={33} color="#000000"/>
+      </Link>
+      
       
     </div>
   )

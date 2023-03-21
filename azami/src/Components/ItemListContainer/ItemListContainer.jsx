@@ -30,9 +30,15 @@ export const ItemListContainer = () => {
     //     )
     // })
     const itemsCollection = collection(db, "products")
-    const q = query(itemsCollection, where("category", "==", categoryName))
-    getDocs(q)
-    .then(res =>{
+    let consulta = undefined;
+    if(categoryName){
+      const q = query(itemsCollection, where("category", "==", categoryName))
+      consulta = getDocs(q)
+    }else{
+      consulta = getDocs(itemsCollection);
+    }
+    
+    consulta.then(res =>{
       let products = res.docs.map((element) =>{
         return {
           ...element.data(), 
