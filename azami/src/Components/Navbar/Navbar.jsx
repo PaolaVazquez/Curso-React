@@ -42,16 +42,16 @@ export const Navbar = ({children})=>{ // se pueden tantos como se tengan
                 <Container maxWidth="lg">
                     <Box >
                         <Grid container spacing={2} sx={{ flexGrow: 1 }}>
-                            <Grid xs={12} md={4}>
-                            <div className="">
-                                <h2>
-                                    <FavoriteIcon/>
-                                    HAZ TU PEDIDO 
-                                    <FavoriteIcon/>
-                                </h2>
-                            </div>
+                            <Grid item xs={12} md={4}>
+                                <div className="">
+                                    <h2>
+                                        <FavoriteIcon/>
+                                        HAZ TU PEDIDO 
+                                        <FavoriteIcon/>
+                                    </h2>
+                                </div>
                             </Grid>
-                            <Grid xs={12} md={8}>
+                            <Grid item xs={12} md={8}>
                                 <div className="">
                                     <h2>Mayor a $700MXN y llevate <b>GRATIS</b> un llavero</h2>
                                 </div>
@@ -76,7 +76,7 @@ export const Navbar = ({children})=>{ // se pueden tantos como se tengan
                         <Link to={"/"}><span>INICIO</span></Link>
                     </li>
                     <li>
-                        <Link href="#"><span>PRODUCTOS </span></Link> 
+                        <Link><span>PRODUCTOS </span></Link> 
                         <ul className="sub-menu">
                             {/* <li><Link to={"/category/Joyeria"}><span>JOYERIA</span></Link></li>
                             <li><Link to={"/category/Calendarios"} ><span>CALENDARIOS</span></Link></li>
@@ -84,7 +84,7 @@ export const Navbar = ({children})=>{ // se pueden tantos como se tengan
                             {
                                 categoryList.map((category)=>{
                                     return(
-                                        <li><Link key={category.id} to={category.path} ><span>{category.title}</span></Link></li>
+                                        <li key={category.id}><Link  to={category.path} ><span>{category.title}</span></Link></li>
                                     )
                                 })
                             }
@@ -92,13 +92,13 @@ export const Navbar = ({children})=>{ // se pueden tantos como se tengan
                     </li>
                     
                     <li>
-                        <Link href="#"><span>NOVEDADES</span></Link>
+                        <Link ><span>NOVEDADES</span></Link>
                     </li>
                     <li>
-                        <Link href="#"><span>CÓMO COMPRAR</span></Link>
+                        <Link ><span>CÓMO COMPRAR</span></Link>
                     </li>
                     <li>
-                        <Link href="#"><span> <CardWidget /></span></Link>
+                        <span> <CardWidget /></span>
                     </li>
                 </ul>
             </nav>
