@@ -15,8 +15,24 @@ import CssBaseline from '@mui/material/CssBaseline';
 import Box from '@mui/material/Box';
 import Container from '@mui/material/Container';
 import Grid from '@mui/material/Grid';
+import { collection, getDocs} from "firebase/firestore"
+import { db } from "../../firebaseConfig"
 
-export const Navbar = ()=>{ // se pueden tantos como se tengan
+
+export const Navbar = ({children})=>{ // se pueden tantos como se tengan
+    const [categoryList, setCategoryList] =React.useState([])
+    React.useEffect(()=>{
+        const itemsCollection = collection(db, "categories")
+        getDocs(itemsCollection).then((res) => {
+            let arrayCategories = res.docs.map( (category) =>{
+                return{
+                    ...category.data(),
+                    id: category.id
+                };
+            });
+            setCategoryList(arrayCategories)
+        });
+    }, []);
     return (
         
     <div className="container-navbar">
@@ -62,9 +78,16 @@ export const Navbar = ()=>{ // se pueden tantos como se tengan
                     <li>
                         <Link href="#"><span>PRODUCTOS </span></Link> 
                         <ul className="sub-menu">
-                            <li><Link to={"/category/Joyeria"}><span>JOYERIA</span></Link></li>
+                            {/* <li><Link to={"/category/Joyeria"}><span>JOYERIA</span></Link></li>
                             <li><Link to={"/category/Calendarios"} ><span>CALENDARIOS</span></Link></li>
-                            <li><Link href="#"><span>Item 1.3</span></Link></li>
+                            <li><Link href="#"><span>Item 1.3</span></Link></li> */}
+                            {
+                                categoryList.map((category)=>{
+                                    return(
+                                        <li><Link key={category.id} to={category.path} ><span>{category.title}</span></Link></li>
+                                    )
+                                })
+                            }
                         </ul>
                     </li>
                     

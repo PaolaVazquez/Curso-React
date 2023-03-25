@@ -12,7 +12,7 @@ export const CartContextProvider = ({children}) => {
         if(elemento.id === producto.id){
           return {
             ...elemento,
-            quantity: elemento.quantity + producto.quantity
+            quantity: producto.quantity
           }
         }else{
           return elemento
@@ -48,24 +48,27 @@ export const CartContextProvider = ({children}) => {
     // }
     // return total;
   };
-  //ELIMINAR
-  const deleteProductById = (id)=>{
-    const newCart = cart.filter((element) => element.id !== id)
-    setCart(newCart)
-  }
 
-  //CONTAR
-  const getQuantityById = (id)=>{
-    const productSelected = cart.find((elemento)=> elemento.id === id)
-    return productSelected?.quantity
-  }
   //TOTAL DEL PRECIO DEL CARRITO
+
   const getTotalPrice = ()=> {
     let precioTotal = cart.reduce((acc, elemento) =>{
       return acc + elemento.quantity * elemento.price;
     }, 0)
     return precioTotal;
   }
+  //ELIMINAR
+  const deleteProductById = (id)=>{
+      const newCart = cart.filter((element) => element.id !== id)
+      setCart(newCart)
+  }
+    
+  //CONTAR
+  const getQuantityById = (id)=>{
+    const productSelected = cart.find((elemento)=> elemento.id === id)
+    return productSelected?.quantity
+  }
+ 
   let data ={
     cart: cart,
     agregarCarrito: agregarCarrito,

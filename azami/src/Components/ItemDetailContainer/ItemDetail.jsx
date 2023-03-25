@@ -1,19 +1,33 @@
 import { width } from '@mui/system'
 import { useParams } from 'react-router-dom'
-import { products } from '../../productMok'
 import { ItemCount } from '../ItemCount/ItemCount'
 import Box from '@mui/material/Box';
 import Container from '@mui/material/Container';
-import { useContext } from 'react';
+import { useContext, useEffect, useState } from 'react';
+import { db } from "../../firebaseConfig"
+import Swal from "sweetalert2";
 import { CartContext } from '../../context/CartContext';
 
+import { getDoc, collection, doc } from "firebase/firestore"
 export const ItemDetail = () => {
 
   const {id} = useParams();
 
   const { agregarCarrito, getQuantityById } = useContext ( CartContext )
+  const [productSelected, setProductSelected] = useState({})
 
-  const productSelected = products.find((element) => element.id === Number(id));
+  useEffect(()=>{
+    const itemsCollection = collection(db, "products")
+    const ref = doc(itemsCollection, id)
+    getDoc(ref)
+    .then(res => {
+      setProductSelected({
+        ...res.data(),
+        id: res.id
+      })
+    })
+
+  }, [id])
 
   console.log(productSelected)
   const onAdd = (cantidad)=>{
@@ -22,6 +36,13 @@ export const ItemDetail = () => {
       quantity: cantidad
     }
     agregarCarrito(producto)
+    Swal.fire({
+      position: 'center',
+      icon: 'success',
+      title: 'Producto agregado al carrito',
+      showConfirmButton: false,
+      timer: 1500
+    })
   }
   let quantity = getQuantityById( Number(id))
   return (

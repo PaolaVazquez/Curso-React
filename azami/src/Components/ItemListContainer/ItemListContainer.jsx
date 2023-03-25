@@ -1,6 +1,5 @@
 import './ItemListContainer.css'
 import { useState, useEffect } from 'react'
-import { products } from '../../productMok'
 import { ItemList } from '../ItemList/ItemList'
 import { useParams } from 'react-router-dom'
 import HashLoader from "react-spinners/HashLoader";
@@ -11,7 +10,7 @@ export const ItemListContainer = () => {
   const {categoryName} = useParams()
 
   const [product, setProduct] = useState([])
-  const productosFiltrados = products.filter((elemento)=>(elemento.category === categoryName))
+
   //console.log(productosFiltrados)
 
   useEffect(()=>{
