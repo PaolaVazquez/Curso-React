@@ -10,7 +10,7 @@ import { BrowserRouter, Routes, Route, Form }  from "react-router-dom"
 import { Cart } from "./Components/Cart/Cart";
 import { Login } from "./Components/Login/Login";
 import { Formulario } from "./Components/Formulario/Formulario";
-import { ItemDetail } from "./Components/ItemDetailContainer/ItemDetail";
+import { ItemDetailContainer } from "./Components/ItemDetailContainer/ItemDetailContainer";
 import { CartContextProvider } from "./context/CartContext";
 
 //{/* COMENTAR */}
@@ -28,7 +28,7 @@ function App() {
           <Route path="/cart" element={ <Cart/>  }/>
           <Route path="/login" element={ <Login/> }/>
           <Route path="*" element={<h1>Error 404: Not Found</h1>} />
-          <Route path="/itemDetail/:id" element={<ItemDetail/>}/>
+          <Route path="/itemDetail/:id" element={<ItemDetailContainer/>}/>
           <Route path="/formulario" element={<Formulario/>}/>
           <Route path="/login" element={<Login/>}/>
           {/*<ProductCard title="Producto 1" price={200} isRed={false}/>*/}
