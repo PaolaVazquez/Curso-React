@@ -39,7 +39,7 @@ export const ItemDetailContainer = () => {
       timer: 1500
     });
   };
-  let quantity = getQuantityById( Number(id))
+  let quantity = getQuantityById( id)
   return (
     <ItemDetail 
       productSelected={productSelected}

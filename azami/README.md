@@ -1,16 +1,21 @@
-#Ecommerce de Azami
+# Ecommerce de Azami
+
+Este es un proyecto de un E-commerce creado con la tecnología de React. 
 
 ### Para clonar el repositorio ejecutar lo siguiente
 
-git clone https://github.com/PaolaVazquez/Curso-React.git
+git clone https://github.com/PaolaVazquez/azami
 
 ### Las dependencias del proyecto son las siguientes:
 
-- React router
-- Sweet alert 2
-- Firebase
-- Material UI
+- React router (https://reactrouter.com/en/main)
+- Sweet alert 2 (https://sweetalert2.github.io/)
+- Firebase (https://firebase.google.com/)
+- Material UI (https://mui.com/)
+- React spinners (https://www.npmjs.com/package/react-spinners)
 
-!["Aca va la imágen de react"] 
+Para iniciar el proyecto es necesario 
 
-[ir a google](https://www.google.com/)
+# NOTA:
+ Al clonar este repositorio deberás de hacer las instalaciones de las dependencias mencionadas para que funcione correctamente.
+

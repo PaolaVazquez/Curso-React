@@ -83,7 +83,11 @@ export const Cart = () => {
                       </div>
                     </Grid>
                     <Grid item xs={4}>
-                      <button onClick={()=>setShowForm(true)}>Terminar la compra</button>
+                      <div className="btn-cart">
+                        <button className="btn-vaciar" onClick={clear} variant="contained">Vaciar el carrito </button>
+                        <button className="btn-compra" onClick={()=>setShowForm(true)}>Terminar la compra</button>
+                      </div>
+                      
                     </Grid>
                     
                         

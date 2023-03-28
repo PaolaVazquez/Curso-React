@@ -7,6 +7,7 @@ export const CartContextProvider = ({children}) => {
   //AGREGAR
   const agregarCarrito = (producto) =>{
     let existe = isInCart(producto.id)
+    
     if(existe ){
       let newCart = cart.map((elemento) => {
         if(elemento.id === producto.id){

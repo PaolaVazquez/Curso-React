@@ -61,3 +61,29 @@
     font-family: 'Montserrat', sans-serif;
     font-weight: 300;
 }
+.btn-vaciar{
+    background-color: #937EBF;
+    border: 1px solid #fff;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+    border-radius: 10px;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
+    cursor: pointer;
+    margin-right: 1rem;
+    width: 180px;
+}
+.btn-compra{
+    background-color: #937EBF;
+    border: 1px solid #fff;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+    border-radius: 10px;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
+    cursor: pointer;
+    width: 180px;
+}
+.btn-cart{
+    justify-content: space-evenly;
+}
