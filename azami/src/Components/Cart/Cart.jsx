@@ -7,6 +7,7 @@ import Grid from '@mui/material/Grid';
 import Swal from "sweetalert2";
 import DeleteIcon from '@mui/icons-material/Delete';
 import { FormCheckout } from "../FormCheckout/FormCheckout";
+import { Link } from "react-router-dom"
 export const Cart = () => {
 
   const { cart, clearCart, getTotalPrice, deleteProductById } = useContext( CartContext )
@@ -37,7 +38,7 @@ export const Cart = () => {
       <div>
         <h2>Gracias por su compra</h2>
         <h4>Su comprobante es: {orderId}</h4>
-        <button>Seguir comprando</button>
+        <Link to="/"> Seguir comprando</Link>
       </div>
     )
   }
