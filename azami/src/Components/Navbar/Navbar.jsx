@@ -42,7 +42,7 @@ export const Navbar = ({children})=>{ // se pueden tantos como se tengan
                 <Container maxWidth="lg">
                     <Box >
                         <Grid container spacing={2} sx={{ flexGrow: 1 }}>
-                            <Grid item xs={12} md={4}>
+                            <Grid  xs={12} md={4}>
                                 <div className="">
                                     <h2>
                                         <FavoriteIcon/>
@@ -51,7 +51,7 @@ export const Navbar = ({children})=>{ // se pueden tantos como se tengan
                                     </h2>
                                 </div>
                             </Grid>
-                            <Grid item xs={12} md={8}>
+                            <Grid  xs={12} md={8}>
                                 <div className="">
                                     <h2>Mayor a $700MXN y llevate <b>GRATIS</b> un llavero</h2>
                                 </div>

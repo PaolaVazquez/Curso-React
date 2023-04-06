@@ -3,10 +3,14 @@
     background-color: #937EBF;
     color: #ffff;
     font-family: 'Montserrat', sans-serif;
+    padding: 20px;
 }
 .footer{
     margin: auto;
     width: 100%;
+    background-color: #937EBF;
+    position: fixed;
+    bottom: 0;
 }
 .atencion-legal .atencion-link .legal-link{
     color: #ffff;
@@ -18,4 +22,19 @@
 }
 .redes-sociales .icon-sm{
     color: #ffff;
+}
+.atencion-legal a{
+    text-decoration: none;
+    color: #ffff;
+}
+.atencion-legal{
+    text-align: center;
+    margin-top: 1rem;
+}
+.redes-sociales{
+    text-align: center;
+    margin-top: 1rem;
+}
+.logo-footer{
+    width: 200px;
 }
