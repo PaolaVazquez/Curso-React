@@ -1,0 +1,18 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,600;0,700;0,800;1,500&display=swap');
+.prom-franja{
+    background-color: #937EBF;
+    color: #fff;
+    text-align: center;
+    align-items: center;
+    display: flex;
+    justify-content: space-evenly;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 300;
+    letter-spacing: 2px;
+}
+.fa-heart{
+    color: #fff;
+}
+.logo-header{
+    width: 200px;
+}
